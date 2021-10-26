@@ -1,0 +1,91 @@
+---
+title: "cranscurb: an R package that provide a clearn version of cran downloads"
+author:
+  # Dai Dai to add her own name here
+  - name: Danyang Dai
+    affiliation: Monash University
+    address:
+    - Monash University
+    - Clayton campus, VIC 3800, Australia
+    url: https://dai.netlify.app
+    email:  danyang.dai@monash.edu
+  - name: Emi Tanaka
+    affiliation: Monash University
+    address:
+    - Monash University
+    - Clayton campus, VIC 3800, Australia
+    url: http://emitanaka.org/
+    orcid: 0000-0002-1455-259X
+    email:  emi.tanaka@monash.edu
+abstract: >
+    Abstract
+bibliography: paper.bib
+
+output: 
+  bookdown::html_document2:
+    theme: paper
+---
+
+```{r setup, cache = FALSE, include = FALSE}
+library(tidyverse)
+tocache <- TRUE
+knitr::opts_chunk$set(echo = FALSE, 
+                      cache = TRUE,
+                      cache.path = "cache/",
+                      fig.align = 'center', 
+                      fig.pos = 'htbp', 
+                      fig.width = 6,
+                      message = FALSE,
+                      warning = FALSE)
+
+theme_set(
+  theme(panel.background = element_rect(fill = NA),
+        panel.grid = element_line(color = "lightgray"),
+        axis.text = element_text(color = "black"),
+        axis.line = element_line(color = "black", size = 0.7),
+        axis.ticks.length = unit(1.4, "mm"),
+        axis.ticks = element_line(color = "black", size = 0.7),
+        axis.title = element_text(color = "black", face = "bold"),
+        strip.background = element_rect(color = "black",
+                                        fill = "black"),
+        strip.text = element_text(color = "white"),
+        plot.title.position = "plot",
+        plot.title = element_text(color = "black", hjust = 0)))
+```
+
+
+```{r load_packages}
+library(tidyverse)
+library(lubridate)
+library(rvest)
+library(glue)
+library(dplyr)
+library(purrr)
+library(ggplot2)
+library(feasts)
+library(cranlogs)
+library(stringr)
+library(bookdown)
+library(installr)
+library(data.table)
+library(scales)
+```
+
+
+# Introduction
+
+
+# The CRAN log files
+
+
+# Data cleaning and processing 
+
+
+# Demo of cranscrub functions 
+
+
+# Comparison of the scrubbed with the orginal data 
+
+
+# Discussion
+
