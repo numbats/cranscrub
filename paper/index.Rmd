@@ -1,5 +1,5 @@
 ---
-title: "cranscurb: an R package that provide a clearn version of cran downloads"
+title: "cranscurb: an R package that provide a clean version of cran downloads"
 author:
   # Dai Dai to add her own name here
   - name: Danyang Dai
