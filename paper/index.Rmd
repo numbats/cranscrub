@@ -21,12 +21,13 @@ abstract: >
     Abstract
 bibliography: paper.bib
 
-output: 
+output:
   bookdown::html_document2:
     theme: paper
+link-citations: yes
 ---
 
-```{r setup, cache = FALSE, include = FALSE}
+```{r setup, include = FALSE}
 library(tidyverse)
 tocache <- TRUE
 knitr::opts_chunk$set(echo = FALSE, 
@@ -69,10 +70,90 @@ library(bookdown)
 library(installr)
 library(data.table)
 library(scales)
+library(cranlogs)
 ```
 
 
 # Introduction
+
+With the growth of R community, many R packages have been developed as research products.
+@hornik2012did said that "R packages are the result of scholarly activity and as such constitute scholarly resources which must be clearly identifiable for the respective scientific communities". Majority of the R packages are developed and owned by individual author who has been contributing and sharing their knowledge with the public. It is important to recognise the contribution that these R package developers made to the scientific and academic communities. One of the most important metric for scholarly and scientific research publications is download statistics [@GreeneJosephW2016Wrdi]. Similar to publications, the download statistics is an important part of the metric. @rhub suggests that download counts are a popular way that indicates a package's importance and quality.   
+
+
+To use the R package download statistics as a metric, it must be accurate to be useful and reliable for any purposes such as grant application. As the number of R package downloads is calculated according to the CRANlog entries, the challenge here is to identify whether it is an actual user behind each entry. 
+
+```{r}
+dd_start <- "2012-10-01"
+dd_end <- Sys.Date() - 1
+
+is_weekend <- function(date) {
+  weekdays(date) %in% c("Saturday", "Sunday")
+}
+
+total_downloads <- cran_downloads(from = dd_start, to = dd_end) %>% 
+  mutate(weekend = is_weekend(date)) %>% 
+  filter(row_number() <= n()-1)
+
+```
+
+The daily total number of R pakcages downloads from October 2012 to July 2021. It is clear that R packages has become popular with the number of R packages downloaded everyday increasing rapidly. There are two unusual number of R package download spikes happened in 2014 and 2018.
+
+```{r , fig.cap = "The daily total number of R pakcages downloads from October 2012 to July 2021. It is clear that R packages has become popular with the number of R packages downloaded everyday increasing rapidly. There are two unusual number of R package download spikes happened in 2014 and 2018.", cache=TRUE}
+total_downloads %>%
+  ggplot()  + 
+  geom_line(aes(date, count/1000))+
+  geom_smooth(aes(date, count/1000),stat = "smooth") +
+  ggtitle("Daily number of R pakcages downloads") +
+  scale_x_continuous(name ="Year", breaks=as.Date(c("2012-01-01","2013-01-01","2014-01-01","2015-01-01","2016-01-01","2017-01-01","2018-01-01","2019-01-01","2020-01-01","2021-01-01")),labels = c("2012","2013","2014","2015","2016","2017","2018","2019","2020","2021")) +
+  scale_y_continuous("Number of R package Downloads", breaks = c(0,2500,5000,7500,10000,15000,20000), labels = c("0","2.5m","5m","7.5m","10m","15m","20m"))+ 
+  theme(plot.title = element_text(hjust = 0.5))
+
+```
+
+```{r}
+load(here::here("paper/Data/spilk_2014.RData"))
+
+
+ID_2014 <- spilk_2014 %>%  
+  group_by(country,ip_id) %>% 
+  count()
+
+pkg_ID_2014 <- spilk_2014 %>%  
+  group_by(country,ip_id,package) %>% 
+  count()
+
+
+ido <- max(ID_2014$n)/sum(ID_2014$n)
+
+ID_2014_country <- spilk_2014 %>% 
+  group_by(country) %>% 
+  count() 
+
+ID_2014_country <- ID_2014_country%>% 
+  mutate(pre = (n/sum(ID_2014_country$n))*100)
+  
+
+
+```
+
+
+```{r }
+library(rworldmap)
+
+mapDevice('x11')
+#join to a coarse resolution map
+spdf <- joinCountryData2Map(ID_2014_country, joinCode="ISO2", nameJoinColumn="country")
+
+mapCountryData(spdf, nameColumnToPlot="pre", catMethod="fixedWidth")
+```
+
+
+Figure  shows the daily total number of R packages downloads from October 2012 to November 2021. From the plot, it suggests that there has been an enormous growth of R package downloads overtime. Among the growth of the number of downloads, there are two spikes observed. Zooming in for a closer look at the two spikes, the first one happened on 17th of November 2014. On the 17th of November 2014, `r format(round(ido*100, 2), nsmall = 2)`\% of the R packages downloads are done by the IP address from Indonesia.  
+
+
+
+
+
 
 
 # The CRAN log files
