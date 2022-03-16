@@ -6,8 +6,8 @@
 #'  and otherwise `getOption("CRAN")` is used.
 #' @export
 ctv_pkgs <- function(name = ctv_names(), repos = NULL) {
-  topic <- match.arg(topic)
-  w <- match(topic, ctv_topics())
+  name <- match.arg(name)
+  w <- match(name, ctv_names())
   query <- ctv::available.views(repos = repos)[w]
   unname(unlist(lapply(query, function(.x) .x$packagelist$name)))
 }
