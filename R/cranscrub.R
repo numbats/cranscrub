@@ -7,7 +7,7 @@
 #' @param when Either `last-day`, `last-week` or `last-month`. If this is 
 #' given then `from` and `to` are ignored. NOT implemented yet!
 #' @param from Start date in YYYY-MM-DD format. 
-#' @param to Start date in YYYY-MM-DD format.
+#' @param to End date in YYYY-MM-DD format.
 #' @examples 
 #' cranscrub(packages = "fable", from = "2020-01-03", to = "2020-01-05")
 #' @export
@@ -35,4 +35,10 @@ cranscrub <- function(packages = NULL,
   out
 }
 
-
+# 
+# scrub_top_downloads <- function(when = c("last-day", "last-week", "last-month"),
+#                                 count = 10,
+#                                 from = NULL, 
+#                                 to = NULL) {
+#   
+# }

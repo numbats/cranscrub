@@ -19,7 +19,7 @@ given then \code{from} and \code{to} are ignored. NOT implemented yet!}
 
 \item{from}{Start date in YYYY-MM-DD format.}
 
-\item{to}{Start date in YYYY-MM-DD format.}
+\item{to}{End date in YYYY-MM-DD format.}
 }
 \description{
 The arguments behave the same as \code{cranlogs::cran_downloads}.
