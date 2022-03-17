@@ -2,6 +2,11 @@
 
 #' Subset the rows of the data by top package
 #' 
+#' This function allow to easily subset the full temporal data by an aggregate statistic 
+#' across (subset of) the temporal variable. For example, we have the daily download count for each 
+#' package from 2012 to 2020 but we want to subset the data based on the top `n` packages, where top
+#' is determined by the total downloads over 2018-2020. 
+#' 
 #' @param .data A data frame, consisting of a column `date`, that rank a category 
 #'   based on some metric for specified range of dates
 #' @param order_by The name of the column to order the ranking by.
