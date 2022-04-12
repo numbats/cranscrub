@@ -2,7 +2,7 @@ Package: cranscrub
 Title: Provides a cleaned up CRAN log data
 Version: 0.0.0.9000
 Authors@R: 
-    c(person("Danyang", "Dai", , "", role = c("aut", "cre")),
+    c(person("Danyang", "Dai", , "danyang.Dai@monash.edu", role = c("aut", "cre")),
       person("Emi", "Tanaka", , "dr.emi.tanaka@gmail.com", role = c("aut"),
            comment = c(ORCID = "0000-0002-1455-259X")))
 Description: What the package does (one paragraph).
