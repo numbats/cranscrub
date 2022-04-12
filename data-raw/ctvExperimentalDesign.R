@@ -10,5 +10,7 @@ dl <- lapply(fns, function(afile) {
 
 ctvExperimentalDesign <- dplyr::bind_rows(!!!dl) %>% 
   mutate(date = as.Date(date)) %>% 
-  select(-file_date)
+  select(-file_date) %>% 
+  distinct()
+
 usethis::use_data(ctvExperimentalDesign, overwrite = TRUE)
