@@ -1,0 +1,5 @@
+http://cran-logs.rstudio.com/2021/2021-08-23.csv.gz
+http://cran-logs.rstudio.com/2021/2021-08-24.csv.gz
+http://cran-logs.rstudio.com/2021/2021-08-25.csv.gz
+http://cran-logs.rstudio.com/2021/2021-08-26.csv.gz
+http://cran-logs.rstudio.com/2021/2021-08-27.csv.gz
