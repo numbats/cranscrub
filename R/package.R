@@ -8,14 +8,15 @@
 #' @param pkgs A character vector of the name of CRAN packages.
 #' 
 #' @export
-pkg_updates <- function(pkgs) {
+pkg_updates <- function(pkgs, message = FALSE) {
   pkg_url <- "https://cran.r-project.org/web/packages/{pkg}/index.html"
   pkg_archive <- "https://cran.r-project.org/src/contrib/Archive/{pkg}/"
   res <- lapply(pkgs, function(pkg) {
     web <- rvest::read_html(glue::glue(pkg_url))
     tab <- rvest::html_table(web)
     last_update <- as.Date(subset(tab[[1]], X1=="Published:", select = 2)[[1]])
-
+    if(message) message(glue::glue("Getting updates for {pkg}."))
+    
     archive_dates <- tryCatch({ 
       webarchive <- rvest::read_html(glue::glue(pkg_archive))
       tabarchive <- rvest::html_table(webarchive)
