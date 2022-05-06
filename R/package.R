@@ -43,9 +43,11 @@ pkg_updates <- function(pkgs, message = FALSE) {
 pkg_db <- function(pkgs) {
   url <- "http://cran.rstudio.com/web/packages/packages.rds"
   db <- as.data.frame(readRDS(url(url)))
-  db <- subset(db, Package %in% pkgs)
-  db$Description <- gsub("\n", " ", db$Description)
-  db$Description <- gsub("(^ +| +$)", "", db$Description)
-  db$Title <- gsub("\n", " ", db$Title)
+  if(!missing(pkgs)) {
+    db <- subset(db, Package %in% pkgs)
+    db$Description <- gsub("\n", " ", db$Description)
+    db$Description <- gsub("(^ +| +$)", "", db$Description)
+    db$Title <- gsub("\n", " ", db$Title)
+  }
   db
 }
