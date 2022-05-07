@@ -14,10 +14,18 @@ ctv_pkgs <- function(name = ctv_names(), repos = NULL) {
 
 #' Get all the list of topics in the CRAN task views 
 #' 
+#' @param topic A logical value to indicate whether to return the topic or name.
+#'  Default is FALSE and returns the task view name.
+#' 
 #' @source https://cran.r-project.org/web/views/
 #' @export
-ctv_names <- function() {
-  names(ctv::available.views())
+ctv_names <- function(topic = FALSE) {
+  x <- ctv::available.views(repos = "http://cran.rstudio.com/")
+  if(topic) {
+    setNames(vapply(x, function(.x) .x[["topic"]], character(1)), names(x))
+  } else {
+    names(x)
+  }
 }
 
 #' Get the CRAN task view as a table 

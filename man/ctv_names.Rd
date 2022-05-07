@@ -7,7 +7,11 @@
 https://cran.r-project.org/web/views/
 }
 \usage{
-ctv_names()
+ctv_names(topic = FALSE)
+}
+\arguments{
+\item{topic}{A logical value to indicate whether to return the topic or name.
+Default is FALSE and returns the task view name.}
 }
 \description{
 Get all the list of topics in the CRAN task views

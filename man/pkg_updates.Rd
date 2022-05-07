@@ -4,7 +4,7 @@
 \alias{pkg_updates}
 \title{Get package release and update dates}
 \usage{
-pkg_updates(pkgs)
+pkg_updates(pkgs, message = FALSE)
 }
 \arguments{
 \item{pkgs}{A character vector of the name of CRAN packages.}
