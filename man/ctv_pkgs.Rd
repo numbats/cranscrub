@@ -7,10 +7,10 @@
 ctv_pkgs(name = ctv_names(), repos = NULL)
 }
 \arguments{
+\item{name}{A topic listed in the CRAN task view.}
+
 \item{repos}{A base URL of the repository. By default, \code{getOption("repos")} is tried
 and otherwise \code{getOption("CRAN")} is used.}
-
-\item{topic}{A topic listed in the CRAN task view.}
 }
 \description{
 Get the list of packages for a given task

@@ -1,7 +1,7 @@
 
 
 #' Get the list of packages for a given task 
-#' @param topic A topic listed in the CRAN task view. 
+#' @param name A topic listed in the CRAN task view. 
 #' @param repos A base URL of the repository. By default, `getOption("repos")` is tried
 #'  and otherwise `getOption("CRAN")` is used.
 #' @export
@@ -14,14 +14,14 @@ ctv_pkgs <- function(name = ctv_names(), repos = NULL) {
 
 #' Get all the list of topics in the CRAN task views 
 #' 
-#' @param topic A logical value to indicate whether to return the topic or name.
+#' @param show_topic A logical value to indicate whether to return the topic or name.
 #'  Default is FALSE and returns the task view name.
 #' 
 #' @source https://cran.r-project.org/web/views/
 #' @export
-ctv_names <- function(topic = FALSE) {
+ctv_names <- function(show_topic = FALSE) {
   x <- ctv::available.views(repos = "http://cran.rstudio.com/")
-  if(topic) {
+  if(show_topic) {
     setNames(vapply(x, function(.x) .x[["topic"]], character(1)), names(x))
   } else {
     names(x)

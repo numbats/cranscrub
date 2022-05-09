@@ -7,10 +7,10 @@
 https://cran.r-project.org/web/views/
 }
 \usage{
-ctv_names(topic = FALSE)
+ctv_names(show_topic = FALSE)
 }
 \arguments{
-\item{topic}{A logical value to indicate whether to return the topic or name.
+\item{show_topic}{A logical value to indicate whether to return the topic or name.
 Default is FALSE and returns the task view name.}
 }
 \description{
