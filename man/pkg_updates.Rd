@@ -8,6 +8,9 @@ pkg_updates(pkgs, message = FALSE)
 }
 \arguments{
 \item{pkgs}{A character vector of the name of CRAN packages.}
+
+\item{message}{Should the message for which package update is extracted be shown?
+The default is FALSE.}
 }
 \description{
 This harvests the information from the CRAN website.
