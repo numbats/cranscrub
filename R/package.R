@@ -304,7 +304,13 @@ author_fix <- function() {
                  "Josh Pasek [aut, cre], with some assistance from Alex Tahk and some code modified from R-core; Additional contributions by Gene Culter and Marcus Schwemmle." = 
                    "Josh Pasek [aut, cre], Alex Tahk, Gene Culter, Marcus Schwemmle.", 
                  "Rezgar Arabzadeh; Parisa Aberi; Kaveh Panaghi; Shahab Araghinejad; Majid Montaseri" = 
-                   "Rezgar Arabzadeh, Parisa Aberi, Kaveh Panaghi, Shahab Araghinejad, Majid Montaseri"
+                   "Rezgar Arabzadeh, Parisa Aberi, Kaveh Panaghi, Shahab Araghinejad, Majid Montaseri",
+      "Raju Rimal [aut, cre] (<https://orcid.org/0000-0001-6097-0285>),\n  Solve Sæbø [aut, ths] (Original creator of the package,\n    <https://orcid.org/0000-0001-8699-4592>),\n  Kristian Hovde Liland [aut] (Contributor and coauthor of the univariate\n    version of simrel, <https://orcid.org/0000-0001-6468-9423>)" = 
+        "Raju Rimal [aut, cre], Solve Sæbø [aut, ths], Kristian Hovde Liland [aut]",
+      "Andrew C. Hooker [aut, cre, trl, cph]\n    (<https://orcid.org/0000-0002-2676-5912>),\n  Marco Foracchia [aut] (O-Matrix version),\n  Eric Stroemberg [ctb] (MATLAB version),\n  Martin Fink [ctb] (Streamlining code, added functionality, vignettes),\n  Giulia Lestini [ctb] (Streamlining code, added functionality,\n    vignettes),\n  Sebastian Ueckert [aut] (MATLAB version,\n    <https://orcid.org/0000-0002-3712-0255>),\n  Joakim Nyberg [aut] (MATLAB version)" = 
+        "Andrew C. Hooker [aut, cre, trl, cph],\n  Marco Foracchia [aut],  Eric Stroemberg [ctb],\n  Martin Fink [ctb], Giulia Lestini [ctb],  Sebastian Ueckert [aut],  Joakim Nyberg [aut]",
+      "Olivier Roustant, David Ginsbourger, Yves Deville. Contributors: Clement Chevalier, Yann Richet." = 
+        "Olivier Roustant, David Ginsbourger, Yves Deville, Clement Chevalier, Yann Richet."
                  #"Belinda Hernandez [aut, cre]\n    Adrian E. Raftery [aut]\n    Stephen R Pennington [aut]\n    Andrew C. Parnell [aut]\n    Eoghan O'Neill [ctb]" = 
                  #  "Belinda Hernandez [aut, cre],\n    Adrian E. Raftery [aut],\n    Stephen R Pennington [aut],\n    Andrew C. Parnell [aut],\n    Eoghan O'Neill [ctb]"
     )
