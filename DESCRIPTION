@@ -1,11 +1,14 @@
 Package: cranscrub
-Title: Provides a cleaned up CRAN log data
+Title: Tools for CRAN Data
 Version: 0.0.0.9000
 Authors@R: 
     c(person("Danyang", "Dai", , "danyang.Dai@monash.edu", role = c("aut", "cre")),
       person("Emi", "Tanaka", , "dr.emi.tanaka@gmail.com", role = c("aut"),
            comment = c(ORCID = "0000-0002-1455-259X")))
-Description: What the package does (one paragraph).
+Description: Functions are provided that cleans the package metadata 
+ (e.g. author list, import, depends, suggests, and descriptions). 
+ The package will also provide a "scrubbed" version of the CRAN logs data 
+ from the RStudio mirror. 
 License: MIT + file LICENSE
 Encoding: UTF-8
 Language: es

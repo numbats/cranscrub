@@ -1,6 +1,7 @@
 
 
 #' Get the list of packages for a given task 
+#' 
 #' @param name A topic listed in the CRAN task view. 
 #' @param repos A base URL of the repository. By default, `getOption("repos")` is tried
 #'  and otherwise `getOption("CRAN")` is used.
